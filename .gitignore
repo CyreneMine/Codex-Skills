@@ -1,0 +1,22 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Python / validation helpers
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Local temporary build output
+.skill-build/
+tmp/
+temp/
+
+# Secrets
+.env
+*.token
+*.secret
+secrets/
