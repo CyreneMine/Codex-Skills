@@ -1,4 +1,4 @@
 interface:
   display_name: "创建 Unity 学习项目规则"
-  short_description: "为不同 Unity 教程生成可持续协作的 AGENTS.md"
-  default_prompt: "使用 $create-unity-learning-agents 为当前 Unity 教程项目生成专属 AGENTS.md。"
+  short_description: "为 Unity 教程生成协作规则，覆盖多工程、运行验证、Agent 协作与作品总结"
+  default_prompt: "使用 $create-unity-learning-agents 检查当前 Unity 学习项目，保留已有约定并生成或更新 AGENTS.md。"

@@ -19,7 +19,8 @@ Codex-Skills/
         │   └── openai.yaml
         └── references/
             ├── core-template.md
-            └── topic-guides.md
+            ├── topic-guides.md
+            └── project-lifecycle.md
 ```
 
 ## Skill 管理规则
@@ -63,4 +64,4 @@ Copy-Item -Recurse `
 
 | Skill | 用途 | 状态 |
 | --- | --- | --- |
-| `create-unity-learning-agents` | 为 Unity 教程学习项目生成专属 `AGENTS.md` 协作规则 | 已验证 |
+| [`create-unity-learning-agents`](skills/create-unity-learning-agents/README.md) | 生成或更新 Unity 学习协作规则，覆盖多工程、验证证据、Agent 协助和 Demo 收尾 | 结构与链接已校验；新对话调用待验证 |

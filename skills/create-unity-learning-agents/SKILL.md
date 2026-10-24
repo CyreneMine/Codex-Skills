@@ -1,65 +1,58 @@
 ---
 name: create-unity-learning-agents
-description: Create or update a tailored AGENTS.md for a long-running Unity tutorial or learning repository. Use when the user starts a new Unity course/project, wants the same mentoring/documentation/Git workflow reused across tutorial series, asks to generate project collaboration rules, or wants an existing AGENTS.md adapted to a new topic such as JSON persistence, UI, animation, input, physics, networking, asset management, or gameplay systems.
+description: Create or update Chinese AGENTS.md collaboration rules for Unity tutorial and learning repositories. Use when starting a course, adapting an existing learning workflow to another project, or carrying lessons from practice into project rules, including multiple Unity projects and demo handover.
 ---
 
 # Create Unity Learning AGENTS
 
-Generate a project-specific `AGENTS.md` that turns a Unity tutorial repository into a durable learning workflow.
+Turn the project's actual learning workflow into maintainable, project-specific `AGENTS.md` rules.
 
 ## Workflow
 
-1. Inspect the current project before writing:
-   - Read an existing `AGENTS.md` or similarly named rule file when present.
-   - Inspect `README.md`, learning-progress files, top-level directories, Unity version, Git status, and representative scripts.
-   - Use the user's stated course topic and directory/course list as the primary scope.
-2. Determine the output:
-   - Default to `<project-root>/AGENTS.md`.
-   - If the user explicitly requests another filename, use it.
-   - Do not overwrite an existing `AGENTS.md` blindly; preserve useful project-specific rules and adapt them.
-3. Build the document from [core-template.md](references/core-template.md).
-4. Add a concise topic-specific section using [topic-guides.md](references/topic-guides.md).
-5. Tailor concrete names:
-   - Replace generic topic names with the actual tutorial topic.
-   - Mention real expected artifacts and validation methods.
-   - Keep unknown details generic or mark them as future decisions.
-6. Write the file directly unless the user asks for a draft only.
-7. Validate the result:
-   - Ensure it says not to modify code without explicit permission.
-   - Ensure each completed lesson updates learning records.
-   - Ensure Git commit/push is opt-in and commit messages default to Chinese.
-   - Ensure checks distinguish code, Unity scene, runtime, and topic-specific artifacts.
-   - Ensure unfinished validation cannot be recorded as completed.
-8. Do not commit or push unless explicitly requested.
+1. Inspect before writing:
+   - Read existing collaboration rules, README, learning progress, notes, and workspace memory when present.
+   - Identify the Git root and each Unity root using real directories, `ProjectVersion.txt`, package manifests, representative scripts, and Git status.
+   - Distinguish an archived theory project from the active practice project when that split exists. Do not assume the repository root is a Unity project.
+   - Use the user's course list, current progress, accepted limitations, and existing authorization as the primary scope. Do not infer titles, completion, or missing runtime results.
+2. Choose the output:
+   - Default to `<repository-root>/AGENTS.md`; honor an explicit alternative.
+   - Preserve useful existing rules, especially modification boundaries, read-only projects, resource exclusions, and learning decisions.
+   - This skill writes collaboration rules. Reorganizing Unity assets, configuring Prefabs, generating data, building the game, or publishing a portfolio requires the corresponding user request.
+3. Read [core-template.md](references/core-template.md) as the shared source, then select relevant sections of [topic-guides.md](references/topic-guides.md).
+4. For theory-to-practice transitions, repetitive Agent-assisted work, authorized Git batches, or a finished Demo, read [project-lifecycle.md](references/project-lifecycle.md). Include only the sections that apply.
+5. Tailor the rules:
+   - Use actual project names, paths, versions, course numbers, artifacts, and validation methods.
+   - Mark unknowns as unknown; do not copy an old project's machine paths, repository owner, authentication state, or tutorial-specific counts.
+   - Resolve obsolete current-state claims while preserving historical snapshots with their date and scope.
+6. Write the file directly unless the user requests a draft. Update related learning documents only within the user's agreed scope; do not generate every possible deliverable automatically.
+7. Validate:
+   - Code and Unity assets remain protected unless already authorized; do not ask again for permission the user has already granted for the same scope.
+   - Lesson records distinguish independent work, tutorial guidance, Agent configuration, static inspection, user-reported results, and direct runtime observation.
+   - Required validation is complete before marking the corresponding scope completed. Optional coverage gaps stay explicit without blocking unrelated completed work.
+   - Git remains opt-in, messages default to Chinese, and project-specific resource exclusions are preserved.
+   - Paths, course numbers, document links, and the active-project designation are consistent.
+8. Commit, push, tag, or publish only when explicitly requested. Honor the actual repository's branch and workflow.
 
 ## Generation Principles
 
-- Write in Chinese unless the user requests otherwise.
-- Preserve the user's mentor-style workflow: inspect real files, explain causes, identify good and bad habits, and give one smallest next step.
-- Prefer a practical document of roughly 180-320 lines. Remove sections that are irrelevant to the project.
-- Keep course-specific checks concrete, but avoid prematurely requiring advanced architecture.
-- Treat documentation files as editable by default; treat code, scenes, Prefabs, ProjectSettings, and Packages as protected unless explicitly allowed.
-- Include final-course GitHub practices: Chinese commit messages, optional Release, artifact verification, and UTF-8 Release body handling.
+- Write generated project rules in Chinese unless requested otherwise.
+- Preserve mentor-style collaboration: inspect real artifacts, explain causes, separate requirement failures from optional improvements, and give one smallest next step.
+- Keep the document proportional to the course. Remove irrelevant sections rather than enforcing a fixed length or advanced architecture.
+- Documentation is editable within the agreed learning workflow. Treat scripts, scenes, Prefabs, controllers, ProjectSettings, and Packages as protected runtime artifacts.
+- Respect explicit choices such as deferring a topic, using an alternative implementation, manually triggering an editor test, or accepting a known limitation. Record the scope and reason instead of repeatedly reopening the decision.
+- Do not equate compilation with runtime correctness, video completion with exercise completion, screenshots with exhaustive testing, or configuration counts with independent behaviors.
+- Carry forward reusable decision rules, not every past bug or a fixed list of project-specific fixes.
 
 ## Topic Selection
 
-Use the closest guide in [topic-guides.md](references/topic-guides.md). Combine guides when the course spans multiple topics.
+Use the closest topic guide, combining only relevant checks. For an absent topic, derive checks from:
 
-If the topic is new or absent, derive checks around:
-
-- the core API or engine subsystem;
-- real artifacts produced by the feature;
-- Unity scene/Inspector configuration;
-- same-run versus cross-run or cross-scene validation;
-- common lifecycle, reference, serialization, platform, and performance boundaries;
-- expected final reusable artifact.
+- the subsystem and actual produced artifacts;
+- scene, Inspector, serialization, and lifecycle dependencies;
+- same-run, scene re-entry, cross-process, or built-player behavior as relevant;
+- evidence needed for this lesson's goal and separate optional boundaries;
+- the useful final reusable artifact.
 
 ## Output Summary
 
-After writing, briefly report:
-
-- created/updated path;
-- selected topic-specific checks;
-- whether existing rules were preserved;
-- that the user should invoke this skill again for the next tutorial project.
-
+Briefly report the updated path, preserved rules, added checks, and remaining unknowns. Mention local edits or exclusions left outside any requested commit. For another tutorial, the user can invoke this skill again to adapt the rules; do not imply the current project's rules apply unchanged.
