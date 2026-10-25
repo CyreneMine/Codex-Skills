@@ -1,0 +1,4 @@
+interface:
+  display_name: "授权课程离线归档"
+  short_description: "保存已获观看权限的课程视频与资料，核验完整性并生成离线学习目录"
+  default_prompt: "使用 $archive-authorized-courses，把我有观看权限的课程整理为经过验证的离线学习资料。"

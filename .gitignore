@@ -20,3 +20,7 @@ temp/
 *.token
 *.secret
 secrets/
+
+# Private inputs for authorized course archiving
+.course-private/
+*.course-auth.json
